@@ -1,0 +1,305 @@
+
+<template>
+<view class='firstPage'>
+  <focusPictures :focuslist.sync="imgUrls" ></focusPictures>
+<view class='content'>
+<view class='contentA'>
+  <view class='contentAa'>
+</view>
+<view class='contentAb'>
+  <text class='textB'>动态</text>
+</view>
+<view class='contentAc'>
+  <text class='textA'>英科信息获得资本大鳄吴鸣霄千万投资</text>
+</view>
+</view>
+<view class='contentB'>
+<view class='contentBa'>
+   <navigator  url='/pages/activity' open-type="switchTab">
+    <image src='http://img.weiye.me/zcimgdir/album/file_592e35f56de6e.png' class='imgA'></image>
+    </navigator>
+  </view>
+<view class='contentBa'>
+   <navigator open-type="navigate"  url='/pages/loginBusiness'>
+   <image src='http://img.weiye.me/zcimgdir/album/file_592e35f55fb1e.png' class='imgA'></image>
+      </navigator>
+  </view>
+  </view>
+  <view class='titleL'>
+    <image src='http://img.weiye.me/zcimgdir/album/file_592528d724207.png' class='imgB'></image>
+    <text class='textTitle'>最新活动</text>
+  </view>
+   <navigator open-type="navigate"  url='/pages/activityDetail'>
+  <image src='http://img.weiye.me/zcimgdir/album/file_593661af727e7.png' class='imgC'></image></navigator>
+      <view class='textC'>创业者纪录片观影 | 记录你最不想忘的”初心”</view>
+    <view class='infoActive'>
+       <view class='infoActiveA'>
+         <image src='http://img.weiye.me/zcimgdir/album/file_592e6aede9613.png' class='imgB'></image>
+         </view> <view class='infoActiveB'><text class='textD'>活动时间:</text></view> <view class='infoActiveC'>
+           <text class='textC'>2017-05-24 09:00-18:30</text></view></view>
+  <view class='infoActive'>
+       <view class='infoActiveA'>
+         <image src='http://img.weiye.me/zcimgdir/album/file_592e6aedcec38.png' class='imgB'></image>
+         </view> <view class='infoActiveB'><text class='textD'>活动地点:</text></view> <view class='infoActiveC'><text class='textC'>越秀区流花路120号 东方宾馆</text></view></view>
+  <view class='infoActive'>
+       <view class='infoActiveA'>
+         <image src='http://img.weiye.me/zcimgdir/album/file_592e6aedc2db8.png' class='imgB'></image>
+    
+       </view> <view class='infoActiveB'><text class='textD'>主办单位:</text></view> <view class='infoActiveC'><text class='textC'>暂无</text></view></view>
+         <view class='infoActive'><view class='timepe'>
+           <text class='textD'>4小时 200人次</text></view>
+         <botton class='btnA'>查看</botton></view>
+         <view class='infoActive'>
+            <view class='inforNews'>
+              <image src='http://img.weiye.me/zcimgdir/album/file_593664ac6389e.png'class='imgA'></image>
+              <view class='textC'>安卓开发者论坛</view>
+            </view>
+                   <view class='inforNews'>
+                     <image src='http://img.weiye.me/zcimgdir/album/file_593664ac49226.png'class='imgA'></image>
+                       <view class='textC'>疯狂的抢票活动</view></view>
+                        <view class='inforNews'>
+                          <image src='http://img.weiye.me/zcimgdir/album/file_593664ac4733e.png' class='imgA'>
+                          </image>  <view class='textC'>运营大咖分享会</view></view>
+                        </view>
+    <view class='titleL'>
+    <image src='http://img.weiye.me/zcimgdir/album/file_592528d724207.png' class='imgB'></image>
+    <text class='textTitle'>商机速递</text>
+  </view>
+<newsList :list.sync="newsList" ></newsList>
+<view class='titleL'>
+    <image src='http://img.weiye.me/zcimgdir/album/file_592528d724207.png' class='imgB'></image>
+    <text class='textTitle'>温商风采</text>
+  </view>
+    <view class='peoplesList'>
+   <block wx:for='{{peoplesList}}' wx:key='key'>
+<navigator class='peoplesListA' open-type="navigate"  url='/pages/characterProfile'>
+<image class='imgA' src='{{item.image}}'/>
+<view class='textC'>{{item.name}}</view>
+<view class='textD'>{{item.peoplesinfo}}</view>
+</navigator>
+</block></view>
+<view class='titleL'>
+    <image src='http://img.weiye.me/zcimgdir/album/file_592528d724207.png' class='imgB'></image>
+    <text class='textTitle'>会员企业</text>
+  </view>
+  <view class='infoActive'>
+<view class='companyVip'><image src='http://img.weiye.me/zcimgdir/album/file_592526fc92184.png' class='imgD'></image></view>
+<view class='companyVip'><image src='http://img.weiye.me/zcimgdir/album/file_592526fccf9d7.png' class='imgD'></image></view>
+<view class='companyVip'><image src='http://img.weiye.me/zcimgdir/album/file_592526fd21d40.png' class='imgD'></image></view>
+<view class='companyVip'><image src='http://img.weiye.me/zcimgdir/album/file_59368619da574.png' class='imgD'></image></view>
+  </view>
+  <view class='infoActive'>
+<view class='companyVip'><image src='http://img.weiye.me/zcimgdir/album/file_592526fc9d34b.png' class='imgD'></image></view>
+<view class='companyVip'><image src='http://img.weiye.me/zcimgdir/album/file_592526fd090df.png' class='imgD'></image></view>
+<view class='companyVip'><image src='http://img.weiye.me/zcimgdir/album/file_592526fd7451b.png' class='imgD'></image></view>
+<view class='companyVip'><image src='http://img.weiye.me/zcimgdir/album/file_592526fdd8d84.png' class='imgD'></image></view>
+  </view>
+  <view class='infoActive'>
+
+<view class='companyVip'><image src='http://img.weiye.me/zcimgdir/album/file_592526fc91905.png' class='imgD'></image></view>
+<view class='companyVip'><image src='http://img.weiye.me/zcimgdir/album/file_592526fced4ab.png' class='imgD'></image></view>
+<view class='companyVip'><image src='http://img.weiye.me/zcimgdir/album/file_592526fd70e45.png' class='imgD'></image></view>
+<view class='companyVip'><image src='http://img.weiye.me/zcimgdir/album/file_592526fda7264.png' class='imgD'></image></view>
+  </view>
+  </view>
+
+</view>
+</template>
+
+<script>
+import wepy from 'wepy'
+import Panel from '@/components/panel' // alias example
+import Group from '../components/group'
+import Toast from 'wepy-com-toast'
+import testMixin from '../mixins/test'
+import NewsList from '../components/newsList'
+import FocusPictures from '../components/focusPictures'
+
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '首页'
+  };
+  components = {
+    panel: Panel,
+    newsList: NewsList,
+    focusPictures: FocusPictures,
+    group: Group,
+    toast: Toast
+  };
+  onLoad() {}
+  mixins = [testMixin];
+  data = {
+    loading: false,
+    newsList: [],
+    imgUrls: [
+      'http://img.weiye.me/zcimgdir/album/file_5a4af9b2c379f.png',
+      'http://img.weiye.me/zcimgdir/album/file_5a4af9b2e3787.png'
+    ],
+    peoplesList: [
+      {
+        image: 'http://img.weiye.me/zcimgdir/album/file_592526ff07515.png',
+        name: '王潇',
+        peoplesinfo: '趁早创始人'
+      },
+      {
+        image: 'http://img.weiye.me/zcimgdir/album/file_592526ff113ab.png',
+        name: '董思阳',
+        peoplesinfo: '金柯天烨总裁'
+      },
+      {
+        image: 'http://img.weiye.me/zcimgdir/album/file_592526ff64596.png',
+        name: '毛京波',
+        peoplesinfo: '奔驰（中国）总裁'
+      },
+      {
+        image: 'http://img.weiye.me/zcimgdir/album/file_59254dff25dce.png',
+        name: '俞敏洪',
+        peoplesinfo: '新东方创始人'
+      },
+      {
+        image: 'http://img.weiye.me/zcimgdir/album/file_59254dff2b463.png',
+        name: '陈欧',
+        peoplesinfo: '聚美优品创始人'
+      }
+    ]
+  };
+
+  methods = {};
+}
+</script>
+<style lang='less'>
+.firstPage {
+  overflow: hidden;
+}
+
+.imgA {
+  width: 100%;
+  height: 200rpx;
+}
+.imgB {
+  width: 25rpx;
+  height: 25rpx;
+}
+.imgC {
+  width: 100%;
+  height: 300rpx;
+}
+.imgD {
+  width: 100%;
+  height: 100rpx;
+}
+.textA {
+  font-size: 28rpx;
+  line-height: 50rpx;
+  font-weight: 600;
+}
+.textC {
+  font-size: 25rpx;
+}
+.textD {
+  font-size: 25rpx;
+  color: #cdc9c9;
+}
+.textTitle {
+  font-size: 30rpx;
+  font-weight: bolder;
+}
+.titleL {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.btnA {
+  width: 140rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border: 1rpx solid #5599ff /* 边框宽度 */;
+  border-radius: 23rpx /* 边框半径 */;
+  cursor: pointer /* 鼠标移入按钮范围时出现手势 */;
+  outline: none /* 不显示轮廓线 */;
+  font-family: Microsoft YaHei /* 设置字体 */;
+  color: #5599ff /* 字体颜色 */;
+  font-size: 25rpx /* 字体大小 */;
+}
+.btnA:hover {
+  background: #5599ff;
+  color: #e5e5e5;
+  border-radius: 23rpx;
+}
+.content {
+  width: 94%;
+  margin: auto;
+}
+.contentA {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100rpx;
+  border: solid 1rpx #e5e5e5;
+  box-shadow: 0rpx 5rpx 3rpx #e5e5e5;
+  .contentAa {
+    width: 10rpx;
+    height: 60rpx;
+    margin-top: 20rpx;
+    background-color: #106ecb;
+  }
+  .contentAb {
+    width: 25%;
+    margin: auto;
+    .textB {
+      font-weight: bolder;
+      padding-left: 50rpx;
+    }
+  }
+  .contentAc {
+    width: 72%;
+    line-height: 100rpx;
+  }
+}
+.contentB {
+  display: flex;
+  justify-content: space-between;
+  .contentBa {
+    width: 48%;
+    margin-top: 40rpx;
+    height: 200rpx;
+  }
+}
+.infoActive {
+  display: flex;
+  justify-content: space-between;
+  .infoActiveA {
+    width: 5%;
+  }
+  .infoActiveB {
+    width: 20%;
+  }
+  .infoActiveC {
+    width: 75%;
+  }
+  .timepe {
+    line-height: 50rpx;
+  }
+  .inforNews {
+    padding-top: 20rpx;
+    width: 31%;
+    height: 250rpx;
+  }
+  .companyVip {
+    width: 24%;
+    height: 100rpx;
+    margin-top: 10rpx;
+  }
+}
+.peoplesList {
+  display: flex;
+  flex-wrap: wrap;
+  .peoplesListA {
+    width: 31%;
+    height: 300rpx;
+    margin-left: 10rpx;
+  }
+}
+</style>

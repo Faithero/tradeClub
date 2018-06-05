@@ -1,0 +1,181 @@
+<template>
+<view class='contentActivity'>
+<focusPictures :focuslist.sync="imgUrls" ></focusPictures>
+<view class='hotActivity'>
+  <view class='hotAct'>
+  <image src='http://img.weiye.me/zcimgdir/album/file_5926864a4da9a.png' class='imgIcon'></image>
+  <view class='hotActive'>最热活动</view>
+    </view>
+</view>
+<view class='contentAct'>
+<view class='actInfor'>
+  <view class='actInform'><image src='http://img.weiye.me/zcimgdir/album/file_593127bc67ddf.png' class='slide-imageA' ></image></view>
+  <view class='actInform'> <image src='http://img.weiye.me/zcimgdir/album/file_593127bc6312d.png'
+   class='slide-imageA'></image></view>
+</view>
+ <view class='hotActivity'>
+  <view class='hotAct'>
+  <image src='http://img.weiye.me/zcimgdir/album/file_5926864a5395a.png' class='imgIcon'></image>
+  <view class='hotActive'>活动列表</view>
+    </view>
+    </view>
+    <view class='listNews'>
+<block wx:for='{{actData}}' wx:key='key'>
+<navigator class='listWrap' open-type="navigate"  url='/pages/activityDetail'>
+<image class='listThumb' src='{{item.actimg}}'></image>
+<view class='listInfo'>
+<view class='textTitle'>{{item.title}}</view>
+<view class='textComp'><image src='http://img.weiye.me/zcimgdir/album/file_59268e88eb5db.png' class='imageIcon'></image><view class='textact'>活动时间：</view><view class='textactivity'>{{item.time}}</view></view>
+<view class='textComp'> <image src='http://img.weiye.me/zcimgdir/album/file_59268e88de24b.png' class='imageIcon'></image><view class='textact'>活动地点：</view><view class='textactivity'>{{item.address}}</view></view>
+<view class='textComp'> <image src='http://img.weiye.me/zcimgdir/album/file_59268e88d23a5.png' class='imageIcon'></image><view class='textact'>活动类型：</view><view class='textactivity'>{{item.actType}}</view></view>
+<view class='textComp'> <image src='http://img.weiye.me/zcimgdir/album/file_59268e88d23a5.png' class='imageIcon'></image><view class='textact'>主办单位：</view><view class='textactivity'>{{item.Organizers}}</view></view>
+</view>
+</navigator>
+</block>
+</view>
+    </view>
+    </view>
+    
+</template>
+<script>
+import wepy from 'wepy'
+import FocusPictures from '../components/focusPictures'
+export default class activity extends wepy.page {
+  config = {
+    navigationBarTitleText: '活动'
+  }
+  components = {
+    focusPictures: FocusPictures
+  }
+  data = {
+    imgUrls: [
+      'http://img.weiye.me/zcimgdir/album/file_592685b8197b8.png',
+      'http://img.weiye.me/zcimgdir/album/file_592685b8f124c.png'
+    ],
+    actData: [
+      {
+        actimg: 'http://img.weiye.me/zcimgdir/album/file_592e7552be1ce.png',
+        title: '中国金融科技与区块链创新峰会',
+        time: '2017-05-24 09:00-18:30',
+        address: '浦东新区锦尊路399号',
+        actType: '招商活动',
+        Organizers: '上海捷昶会议策划集团'
+      },
+      {
+        actimg: 'http://img.weiye.me/zcimgdir/album/file_592e7552abcb7.png',
+        title: '2017产融中国年会',
+        time: '2017-05-24 09:00-18:30',
+        address: '北京市东城区北京',
+        actType: '招商活动',
+        Organizers: '产融会'
+      },
+      {
+        actimg: 'http://img.weiye.me/zcimgdir/album/file_592e7552aefa4.png',
+        title: '第十九届中国风险投资论坛',
+        time: '2017-05-24 09:00-18:30',
+        address: '越秀区流花路120号 东方宾馆',
+        actType: '招商活动',
+        Organizers: '暂无'
+      }
+    ]
+  }
+}
+</script>
+<style lang="less">
+.contentActivity {
+  overflow: hidden;
+}
+.contentAct {
+  width: 95%;
+  margin: auto;
+}
+.slide-imageA {
+  width: 100%;
+  height: 300rpx;
+}
+.slide-image {
+  width: 100%;
+}
+.textTitle {
+  font-size: 30rpx;
+}
+.hotActivity {
+  width: 100%;
+  height: 80rpx;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.imgIcon {
+  width: 40rpx;
+  height: 40rpx;
+}
+.hotAct {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200rpx;
+  height: 40rpx;
+  margin-left: -100rpx;
+  margin-top: -20rpx;
+
+  .hotActive {
+    width: 120rpx;
+    font-size: 28rpx;
+    font-weight: 600;
+  }
+}
+.actInfor {
+  display: flex;
+  justify-content: space-between;
+  .actInform {
+    width: 48%;
+    height: 300rpx;
+  }
+}
+.listWrap {
+  position: relative;
+  width: 705rpx;
+  padding: 0 25rpx;
+  padding: 30rpx 25rpx;
+}
+.listThumb {
+  width: 200rpx;
+  height: 230rpx;
+  display: block;
+  float: left;
+}
+.listInfo {
+  height: 230rpx;
+  width: 60%;
+  display: inline-block;
+  padding-left: 10rpx;
+  position: relative;
+  .textTitle {
+    font-size: 28rpx;
+    padding-left: 20rpx;
+  }
+}
+.textComp {
+  display: flex;
+  justify-content: space-between;
+  font-size: 23rpx;
+  .imageIcon {
+    width: 50rpx;
+    height: 50rpx;
+  }
+  .textact {
+    width: 30%;
+    height: 50rpx;
+    line-height: 50rpx;
+    color: rgb(129, 122, 122);
+  }
+  .textactivity {
+    width: 60%;
+    height: 50rpx;
+    line-height: 50rpx;
+  }
+}
+</style>

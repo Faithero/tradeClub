@@ -1,0 +1,145 @@
+<template>
+   <view class='content'>
+   <view class='textA'>
+   <view class='textAa'> 王潇</view><view class='textAb'>趁早创始人</view>
+     </view><image src='http://img.weiye.me/zcimgdir/album/file_5925575b8026b.png' class='imgA'></image>
+     <view class='panals'>
+     <view class='humImg'>
+         <view class='titleInfor'>
+         <image src='http://img.weiye.me/zcimgdir/album/file_592558eb38d85.png' class='imgIcon'></image>
+     <view class='inforChara'>个人简介</view>
+      </view>
+      <view class='inforDitail'>1978年11月3日出生于北京，本科毕业于中国传媒大学播音系，
+          2001年在中央电视台1套节目直播整点新闻。
+          后就职于美国安可顾问公司战略传播部。中国人民大学新媒体专业研究生。
+          2006年创业，成立Motionpost设计顾问公司并担任CEO  。2013年，以“趁早”为名注册自有品牌 
+          ，创立国内女性励志品类 。</view>
+          </view>
+     </view>
+     <view class='panals'>
+     <view class='humImg'> 
+    <view class='titleInfor'>
+    <image src='http://img.weiye.me/zcimgdir/album/file_592558eb38d85.png' class='imgIcon'></image>
+     <view class='inforChara'>所在企业</view> </view>
+       <view class='company'>
+           <view class='companya'>
+               <image src='http://img.weiye.me/zcimgdir/album/file_59255d5109fb3.png' class='imgB'></image>
+               </view>
+               <view class='companyb'>
+                   <view class='Texttitle'>趁早 SHAPE YOUR LIFE</view><view class='Texttitlea'>市场估值：30亿人民币</view>
+               </view>
+           </view></view>
+       </view>
+        <view class='panals'>
+     <view class='humImg'> 
+    <view class='titleInfor'>
+    <image src='http://img.weiye.me/zcimgdir/album/file_592558eb38d85.png' class='imgIcon'></image>
+     <view class='inforChara'>工作经历</view> </view>
+     <view class='Texttitle'>光速安振中国基金</view><view class='Texttitlea'>职位：创始合伙人</view>
+     <view class='Texttitlea'>时间：2008年～至今</view>
+     <view class='Texttitle'>麦肯锡</view><view class='Texttitlea'>职位：高级顾问</view><view class='Texttitlea'>时间：未公开</view>
+     <view class='Texttitle'>微软中国</view><view class='Texttitlea'>职位：工程师</view><view class='Texttitlea'>时间：未公开</view>
+     </view> </view>
+      <view class='panals'>
+     <view class='humImg'> 
+    <view class='titleInfor'>
+    <image src='http://img.weiye.me/zcimgdir/album/file_592558eb38d85.png' class='imgIcon'></image>
+     <view class='inforChara'>商务联系</view>
+     </view>  <view class='Texttitle'>E-mail:  zhichi@zc.com</view></view> </view>
+   </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class characterProfile extends wepy.page {
+  config = {
+    navigationBarTitleText: '人物介绍'
+  };
+  data = {}
+  components = {};
+}
+</script>
+<style lang="less">
+.content{
+  overflow: hidden;
+}
+.panals{
+    border-bottom: solid 10rpx #e5e5e5;
+    
+}
+.humImg{
+   width: 94%;
+  margin: auto;
+  margin-bottom: 20rpx;
+
+}
+.imgA {
+  width: 100%;
+  height: 400rpx;
+  position: relative;
+  z-index: 1;
+}
+.imgB{
+     width: 100%; 
+     height: 150rpx;
+}
+.textA {
+  padding-top: 100rpx;
+  padding-left: 100rpx;
+  position: absolute;
+  z-index: 999;
+  color: #fff;
+  .textAa {
+    font-size: 55rpx;
+    font-weight: 600;
+    z-index: 999;
+    color: #fff;
+  }
+  .textAb {
+    font-size: 35rpx;
+    z-index: 999;
+    color: #fff;
+  }
+}
+.imgIcon{
+    width: 40rpx;
+    height: 40rpx;
+}
+.inforChara{
+    font-size: 30rpx;
+    height: 40rpx;
+}
+.titleInfor{
+    height: 60rpx;
+    display: flex;
+    flex-direction: row;
+    padding-top: 10rpx;
+}
+.inforDitail{
+    width: 96%;
+    font-size: 25rpx;
+    margin-left: 4%;
+}
+.Texttitle{
+    font-size: 28rpx;
+    padding-top: 20rpx;
+}
+.Texttitlea{
+    font-size: 22rpx;
+    color: rgb(141, 135, 135);
+}
+.company{
+    display: flex;
+    flex-direction: row;
+    .companya{
+        width: 30%;
+        height: 150rpx;
+    }
+    .companyb{
+        width: 70%;
+        height: 150rpx;
+      line-height: 60rpx;
+      padding-left: 40rpx;
+    }
+
+}
+</style>

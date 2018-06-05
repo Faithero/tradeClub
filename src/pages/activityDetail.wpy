@@ -1,0 +1,69 @@
+<template>
+    <view>
+        <image src='http://img.weiye.me/zcimgdir/album/file_59367835c5996.png' class='slide-image'></image>
+        <view class='listInfo'>
+<view class='textComp'><image src='http://img.weiye.me/zcimgdir/album/file_59268e88eb5db.png' class='imageIcon'></image><view class='textact'>活动时间：</view><view class='textactivity'>2017-05-24 09:00-18:30</view></view>
+<view class='textComp'> <image src='http://img.weiye.me/zcimgdir/album/file_59268e88de24b.png' class='imageIcon'></image><view class='textact'>活动地点：</view><view class='textactivity'>浦东新区锦尊路399号</view></view>
+<view class='textComp'> <image src='http://img.weiye.me/zcimgdir/album/file_59268e88d23a5.png' class='imageIcon'></image><view class='textact'>活动类型：</view><view class='textactivity'>招商活动</view></view>
+<view class='textComp'> <image src='http://img.weiye.me/zcimgdir/album/file_59268e88d23a5.png' class='imageIcon'></image><view class='textact'>主办单位：</view><view class='textactivity'>上海捷昶会议策划集团
+</view></view>
+    </view>
+    <view class='actNews'>根据国务院办公厅《关于促进和规范健康医疗大数据应用发展的指导意见》和“健康中国2030”规划有关精神，积极营造促进健康医疗大数据安全规范、创新应用的发展环境。 引导社会资本参与健康医疗大数据的基础工程、应用开发和运营服务，促进大数据、无线通信技术、云计算、互联网等技术与医疗健康的深度融合。北京大学信息科学技术学院联合中国医院协会信息管理专业委员会等单位定于12月7-8日在北京召开“2016中国医疗健康大数据技术峰会”。</view>
+    <view class='actNews'>本次峰会将以“技术助力健康医疗大数据”为主题， 邀请主管部门、科研院所、医疗机构、及相关市场的领导和专家共同参加本届大会。汇聚专家力量，解析分析大数据前景、机遇和挑战，探索大数据技术在临床、管理、卫生、医学、影像、慢病、医药等领域的应用， 从而促进政产学研用协同创新，并加强相关领域及产业界的交流与协作。
+    </view>
+    <view class='actNews'>在此，我们诚邀您作为会议的合作媒体参加此次会议，共建健康医疗大数据发展的良好局面。</view>
+    </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class activityDetail extends wepy.page {
+  config = {
+    navigationBarTitleText: '活动详情'
+  };
+  components = {};
+  data = {};
+}
+</script>
+<style lang="less">
+.slide-image {
+  width: 100%;
+  z-index: 1;
+}
+.listInfo {
+  margin: auto;
+  width: 96%;
+  height: 210rpx;
+  margin-top: -30rpx;
+  z-index: 999;
+  position: relative;
+  background: white;
+  box-shadow: #e5e5e5 0 3px 3px;
+}
+.textComp {
+  display: flex;
+  justify-content: space-between;
+  font-size: 23rpx;
+  .imageIcon {
+    width: 50rpx;
+    height: 50rpx;
+  }
+  .textact {
+    width: 25%;
+    height: 50rpx;
+    line-height: 50rpx;
+    color: rgb(129, 122, 122);
+  }
+  .textactivity {
+    width: 70%;
+    height: 50rpx;
+    line-height: 50rpx;
+  }
+}
+.actNews {
+  font-size: 23rpx;
+  width: 90%;
+  margin: auto;
+  padding-top: 40rpx;
+  padding-bottom: 20rpx;
+}
+</style>

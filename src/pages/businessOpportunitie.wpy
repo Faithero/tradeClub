@@ -1,0 +1,224 @@
+<template>
+    <view>
+  <focusPictures :focuslist.sync="imgUrls" ></focusPictures>
+<view class="navbar">  
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>  
+</view>  
+<!--首页-->  
+<view hidden="{{currentTab!==0}}">  
+ <view class='comList'>
+   <block wx:for='{{comList}}' wx:key='key'>
+<view class='comListA'>
+<image class='imgA' src='{{item.humenimage}}'/>
+<view class='textC'>
+   <view class='textB'>{{item.englishName}}</view>
+   {{item.name}}
+</view>
+<view class='textD'>
+  <view class='displayImg'><image class='imgB' src='{{item.displayImga}}'></image></view>
+  <view class='displayImg'><image class='imgB' src='{{item.displayImgb}}'></image></view>
+  <view class='displayImg'><image class='imgB' src='{{item.displayImgc}}'></image></view>
+</view>
+</view>
+</block></view>
+
+</view>   
+<!--搜索-->  
+<view hidden="{{currentTab!==1}}">  
+<view class='conmands'> 
+  <view class='conmandsa'>
+    <image class='conmandsimg' src='http://img.weiye.me/zcimgdir/album/file_5948cc6ab5303.png'></image> 
+    找人
+    </view>
+  <view class='conmandsa'> 
+     <image class='conmandsimg' src='http://img.weiye.me/zcimgdir/album/file_5948cc6aa7b58.png'></image> 
+     找厂家
+    </view>
+  <view class='conmandsa'>
+    <image class='conmandsimg' src='http://img.weiye.me/zcimgdir/album/file_5948cc6aa315f.png'></image> 
+     找产品 </view>
+   
+</view>
+ <input type='text' class='inputStyle' placeholder=' 您的姓名' bindinput='name'></input>
+ <input type='number' class='inputStyle' placeholder=' 您的联系方式' bindinput='tel'></input>
+ <input type='text' class='inputStyle' placeholder=' 您想要我们帮你找？' bindinput='name'></input>
+ <view class='btnAA'>
+ <botton class='btnA' @tap="loginHandle">提交</botton> </view> </from>
+ </view>
+</view>  
+    </view>
+</template>
+<script>
+import wepy from 'wepy'
+import FocusPictures from '../components/focusPictures'
+export default class businessOpportunitie extends wepy.page {
+  config = {
+    navigationBarTitleText: '商机'
+  }
+  components = {
+    focusPictures: FocusPictures
+  }
+  data = {
+    navbar: ['产品展示', '需求发布'],
+    currentTab: 0,
+    loading: false,
+    indicatorDots: true,
+    autoplay: true,
+    interval: 5000,
+    duration: 1000,
+    circular: true,
+    imgUrls: [
+      'http://img.weiye.me/zcimgdir/album/file_59365ba5a6625.png',
+      'http://img.weiye.me/zcimgdir/album/file_59365ba1d3180.png'
+    ],
+    comList: [
+      {
+        humenimage: 'http://img.weiye.me/zcimgdir/album/file_5936826ccd07a.png',
+        name: '王潇',
+        englishName: '趁早SHAPE YOUR LIFE',
+        displayImga:
+          'http://img.weiye.me/zcimgdir/album/file_5936826c59cbc.png',
+        displayImgb:
+          'http://img.weiye.me/zcimgdir/album/file_5936826c6fc45.png',
+        displayImgc: 'http://img.weiye.me/zcimgdir/album/file_5936826be956c.png'
+      },
+      {
+        humenimage: 'http://img.weiye.me/zcimgdir/album/file_5936826ce7735.png',
+        name: '陈欧',
+        englishName: 'Artden',
+        displayImga:
+          'http://img.weiye.me/zcimgdir/album/file_5936826bd084a.png',
+        displayImgb:
+          'http://img.weiye.me/zcimgdir/album/file_5936826bd8491.png',
+        displayImgc: 'http://img.weiye.me/zcimgdir/album/file_5936826c7e3a9.png'
+      }
+    ]
+  };
+  methods = {
+    navbarTap: function(e) {
+      this.currentTab = e.currentTarget.dataset.idx
+    },
+    loginHandle() {
+      console.log(this.$state.user)
+      this.methods.authSuccess({ name: '登录者名称' })
+    }
+  }
+}
+</script>
+<style lang="less">
+.slide-image {
+  width: 100%;
+}
+.navbar {
+  margin: auto;
+  width: 400rpx;
+  color: rgb(155, 153, 145);
+  font-size: 30rpx;
+  flex: none;
+  display: flex;
+  background: #fff;
+}
+.navbar .item {
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
+}
+.navbar .item.active {
+  color: rgb(32, 32, 29);
+}
+.navbar .item.active:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 40rpx;
+  margin: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background: rgb(32, 32, 29);
+}
+.comList {
+  align-items: center;
+  justify-content: space-between;
+}
+.comListA {
+  padding-top: 50rpx;
+  width: 96%;
+  margin: auto;
+  font-size: 25rpx;
+  color: rgb(175, 164, 164);
+  .imgA {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 80rpx;
+  }
+  .textC {
+    width: 85%;
+    float: right;
+    .textB {
+      color: black;
+    }
+  }
+}
+.textD {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  .displayImg {
+    padding-top: 30rpx;
+    width: 30%;
+    height: 200rpx;
+    .imgB {
+      width: 100%;
+      height: 200rpx;
+    }
+  }
+}
+.conmands {
+  display: flex;
+  justify-content: space-around;
+  font-size: 25rpx;
+  .conmandsa {
+    width: 10%;
+    height: 200rpx;
+  }
+  .conmandsimg {
+    width: 100%;
+    height: 100rpx;
+  }
+}
+.inputStyle {
+  font-size: 28rpx;
+  margin: auto;
+  border: 1rpx solid #e5e5e5;
+  width: 400rpx;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+}
+.btnAA {
+  width: 100%;
+  margin-top: 20rpx;
+}
+.btnA {
+  margin: auto;
+  width: 400rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border: 1rpx solid #5599ff /* 边框宽度 */;
+  border-radius: 23rpx /* 边框半径 */;
+  cursor: pointer /* 鼠标移入按钮范围时出现手势 */;
+  outline: none /* 不显示轮廓线 */;
+  font-family: Microsoft YaHei /* 设置字体 */;
+  color: #5599ff /* 字体颜色 */;
+  font-size: 25rpx /* 字体大小 */;
+  display: block;
+}
+.btnA:hover {
+  background: #5599ff;
+  color: #e5e5e5;
+  border-radius: 23rpx;
+}
+</style>

@@ -1,0 +1,53 @@
+<template>
+    <view class='newsContent'>
+      <view class='textNewsa'>
+      是什么让Pre-IPO投资爆火？“快的话不要三年就能赚得更多”
+    </view>
+    <view class='textNewsb'>
+每经网
+    </view>
+    <view class='textNewsb'>
+2017-05-21
+    </view>
+    <image src='http://img.weiye.me/zcimgdir/image/20170524151753_81052.png' class='imgA'></image>
+    <view class='textNewsc'>折价率持续下行，“破定”屡屡出现，原本“躺着赚钱的”A股定增市场遭到机构冷遇，逐利资金开始疯狂涌向Pre-IPO。中国证券报记者了解到，近期部分机构疯抢新三板优质Pre-IPO项目，却往往一票难求，甚至有第三方张口索要百万介绍费。</view>
+    <view class='textNewsc'>业内人士告诉记者，A股持续调整让机构参与定增积极性降至冰点，反观IPO赚钱效应持续火爆。“少部分先知先觉的资金从去年底就开始布局Pre-IPO，但资源有限，如今想分一杯羹已非常困难。”
+
+-IPO。中国证券报记者了解到，近期部分机构疯抢新三板优质Pre-IPO项目，却往往一票难求，甚至有第三方张口索要百万介绍费。</view>
+    <view class='textNewsc'>Pre-IPO火爆背后却是乱象丛生、泡沫隐现。有企业故意放风“拟IPO”，忽悠投资者做实控人套现出逃的“接盘侠”。业内人士指出，在狂热投资潮流中需保持警惕，抽丝剥茧识别企业风险，才能避免踩中“雷区”。
+
+-IPO。中国证券报记者了解到，近期部分机构疯抢新三板优质Pre-IPO项目，却往往一票难求，甚至有第三方张口索要百万介绍费。</view>
+
+
+
+    </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class news extends wepy.page {
+  config = {
+    navigationBarTitleText: '新闻'
+  };
+  components = {};
+}
+</script>
+<style lang="less">
+.newsContent{
+  width: 94%;
+  margin: auto;
+}
+.textNewsa{
+  font-size: 30rpx
+}
+.textNewsc{
+  font-size: 25rpx;
+  margin-bottom: 30rpx;
+}
+.textNewsb{
+  font-size: 25rpx;
+  color:rgb(139, 134, 134);
+}
+.imgA{
+  width: 100%;
+}
+</style>

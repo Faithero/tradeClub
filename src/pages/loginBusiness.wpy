@@ -1,0 +1,108 @@
+<template>
+        <view class='loginBusiness'>
+            <image src='http://img.weiye.me/zcimgdir/album/file_593667215a32d.png' class='imgA'></image>
+          
+    <view class='imgStyle'>
+         <image src='http://img.weiye.me/zcimgdir/album/file_592528d724207.png'  class='imgB'/></image> </view>
+            <view class='textA'>申请商会</view>
+            <from bindsubmit="reg">
+            <input type='text' class='inputStyle' placeholder=' 您的姓名' name='name'></input>
+            <input type='text' class='inputStyle' placeholder=' 你的企业名称' name='companyName'></input>
+            <input type='text' class='inputStyle' placeholder=' 您今天的填表日期' name='date'></input>
+            <input type='number' class='inputStyle' placeholder=' 您的联系方式' name='tel'></input>
+          <view class='btnAA'>
+          <botton class='btnA' form-type='submit' type='primary' @tap="showWarningTip">提交</botton> <toast/> </view> </from>
+    </view>
+    
+</template>
+<script>
+import wepy from 'wepy'
+import toast from 'wepy-simple-toast'
+import { connect } from 'wepy-redux'
+import { authSuccess } from '../reduxs/user.redux'
+@connect(
+  state => {
+    return state
+  },
+  {
+    authSuccess
+  }
+)
+export default class loginBusiness extends wepy.page {
+  config = {
+    navigationBarTitleText: '登录'
+  };
+  components = {
+    toast
+  }
+  mixins = [toast.mixin]
+  data = {}
+  methods = {
+    loginHandle() {
+      console.log(this.$state.user)
+    },
+    showWarningTip() {
+      this.$warningTip('没有参数', { duration: 3000 })
+    }
+  }
+  onLoad() {}
+}
+</script>
+<style lang="less">
+.loginBusiness {
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  .textA {
+    width: 120rpx;
+    margin: auto;
+    font-size: 28rpx;
+    font-weight: 800;
+  }
+  .btnAA {
+    width: 100%;
+    margin-top: 20rpx;
+  }
+  .btnA {
+    margin: auto;
+    width: 400rpx;
+    height: 50rpx;
+    text-align: center;
+    line-height: 50rpx;
+    border: 1rpx solid #5599ff /* 边框宽度 */;
+    border-radius: 23rpx /* 边框半径 */;
+    cursor: pointer /* 鼠标移入按钮范围时出现手势 */;
+    outline: none /* 不显示轮廓线 */;
+    font-family: Microsoft YaHei /* 设置字体 */;
+    color: #5599ff /* 字体颜色 */;
+    font-size: 25rpx /* 字体大小 */;
+    display: block;
+  }
+  .btnA:hover {
+    background: #5599ff;
+    color: #e5e5e5;
+    border-radius: 23rpx;
+  }
+}
+.inputStyle {
+  font-size: 28rpx;
+  margin: auto;
+  border: 1rpx solid #e5e5e5;
+  width: 400rpx;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+}
+
+.imgA {
+  width: 100%;
+  height: 150rpx;
+}
+.imgStyle {
+  text-align: center;
+}
+.imgB {
+  margin: auto;
+  width: 25rpx;
+  height: 25rpx;
+}
+</style>

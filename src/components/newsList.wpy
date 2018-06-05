@@ -1,0 +1,90 @@
+<template>
+<block wx:for='{{newsList}}' wx:key='key'>
+<navigator class='listWrap' open-type="navigate"  url='/pages/news'>
+<image class='listThumb' src='{{item.image}}'/>
+<view class='listInfo'>
+  <view class='listTitle'>{{item.title}}</view>
+  <view class='listKeyAdd'><text class='addFN'>{{item.fromname}}</text><text class='addKY'>{{item.keywords}}</text></view>
+</view>
+</navigator>
+</block>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class NewsList extends wepy.component {
+  props = {
+    list: {
+      type: Object
+    }
+  };
+  onLoad() {
+    this.list = this.newsList
+  }
+  data = {
+    newsList: [
+      {
+        image: 'http://img.weiye.me/zcimgdir/album/file_592526fde9533.png',
+        title: '是什么让Pre-IPO投资爆火？“快的话不要三年就能赚得更多”',
+        fromname: '每经网',
+        keywords: '2017-05-21'
+      },
+      {
+        image: 'http://img.weiye.me/zcimgdir/album/file_592526fe4131a.png',
+        title: '王思聪愿为它吃翔，马化腾看不准还投资，共享充电宝已疯？',
+        fromname: '罗超',
+        keywords: '2017-05-08'
+      },
+      {
+        image: 'http://img.weiye.me/zcimgdir/album/file_592526fe458f4.png',
+        title: '1808笔投资、总金额165亿美元，来看看特朗普上台后的美国风投趋势',
+        fromname: '星河互联集团',
+        keywords: '2017-05-21'
+      }
+    ]
+  };
+  computed = {};
+  methods = {};
+}
+</script>
+<style lang="less">
+.listWrap {
+  width: 705rpx;
+  padding: 0 25rpx;
+  padding: 30rpx 25rpx;
+}
+.listThumb {
+  width: 260rpx;
+  height: 160rpx;
+  display: block;
+  float: left;
+}
+.listInfo {
+  height: 160rpx;
+  width: 60%;
+  display: inline-block;
+  padding-left: 10rpx;
+  position: relative;
+}
+.listTitle {
+  color: #333;
+  font-size: 25rpx;
+}
+.listKeyAdd {
+  font-size: 25rpx;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.addFN {
+  color: #808080;
+  display: block;
+  float: left;
+}
+.addKY {
+  color: #d9c599;
+  float: right;
+  display: block;
+  margin-right: 25rpx;
+}
+</style>

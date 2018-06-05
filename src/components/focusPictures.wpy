@@ -1,0 +1,38 @@
+<template>
+<swiper indicator-dots='{{indicatorDots}}'
+  autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}' circular='{{circular}}' >
+<block wx:for='{{focuslist}}' wx:key='key'>
+<swiper-item>
+<navigator >
+<image src='{{item}}' class='slide-image' width='355' height='150'/>
+</navigator>
+</swiper-item>
+</block>
+</swiper>
+</template>
+<script>
+import wepy from 'wepy'
+export default class FocusPictures extends wepy.component {
+  props = {
+    focuslist: {
+      type: Object
+    }
+  };
+  onLoad() {}
+  data = {
+    indicatorDots: true,
+    autoplay: true,
+    interval: 5000,
+    duration: 1000,
+    circular: true
+  };
+  computed = {};
+  methods = {};
+}
+</script>
+
+<style lang="less">
+.slide-image {
+  width: 100%;
+}
+</style>

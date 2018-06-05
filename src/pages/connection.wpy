@@ -1,0 +1,361 @@
+<template>
+    <view class='content'>
+  <view class="navbar">  
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTabs==index ? 'active' : ''}}"
+   wx:key="unique" bindtap="navbarTap">{{item}}</text>  
+</view>  
+<!--首页-->  
+<view hidden="{{currentTabs!==0}}">
+  <view class='humImg'>
+   <view class='textA'><text class='textAa'>陈欧</text>
+   <view class='textAb'>聚美优品创始人</view>
+     </view> <navigator open-type="navigate"  url='/pages/characterProfile'> <image src='http://img.weiye.me/zcimgdir/album/file_5925575c048e4.png' class='imgA'></image></navigator></view>
+  <view> <view class='textA'>
+    <view class='textAa'>俞敏洪</view><view class='textAb'>新东方创始人</view>
+    </view><navigator open-type="navigate"  url='/pages/characterProfile'><image src='http://img.weiye.me/zcimgdir/album/file_5925575d96aa9.png' class='imgA'></image></navigator></view>
+  <view> <view class='textA'>
+     <view class='textAa'>毛京波</view><view class='textAb'>奔驰（中国）总裁</view>
+    </view><navigator open-type="navigate"  url='/pages/characterProfile'><image src='http://img.weiye.me/zcimgdir/album/file_5925575b7ac35.png' class='imgA'></image></navigator></view>
+  <view> <view class='textA'>
+     <view class='textAa'>董思阳</view><view class='textAb'>金柯天烨总裁</view>
+     </view><navigator open-type="navigate"  url='/pages/characterProfile'><image src='http://img.weiye.me/zcimgdir/album/file_5925575d3074a.png' class='imgA'></image></navigator></view>
+  <view> <view class='textA'>
+     <view class='textAa'> 王潇</view><view class='textAb'>趁早创始人</view>
+     </view><navigator open-type="navigate"  url='/pages/characterProfile'><image src='http://img.weiye.me/zcimgdir/album/file_5925575b8026b.png' class='imgA'></image></navigator></view>
+</view>
+<view hidden="{{currentTabs!==1}}">
+  <view class="swiper-tab">  
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">全部</view>  
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">互联网</view>  
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">金融</view>
+    <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">教育</view> 
+</view>  
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:1600rpx" bindchange="bindChange">  
+    <swiper-item>  
+      <view> <block wx:for='{{companyData}}' wx:key='key'>
+<navigator class='listWrap'>
+<image class='listThumb' src='{{item.companyImg}}'></image>
+<view class='listInfo'>
+<image src='http://img.weiye.me/zcimgdir/album/file_5936713fa9884.png' class='imgSt'></image>
+<text class='textCom'>{{item.name}}</text>
+<view class='textComp'>{{item.title}}</view>
+</view>
+</navigator>
+</block>  </view>  
+    </swiper-item>  
+    <swiper-item>  
+      <view><block wx:for='{{companyData}}' wx:key='key'>
+<navigator class='listWrap'>
+<image class='listThumb' src='{{item.companyImg}}'></image>
+<view class='listInfo'>
+<image src='http://img.weiye.me/zcimgdir/album/file_5936713fa9884.png' class='imgSt'></image>
+<text class='textCom'>{{item.name}}</text>
+<view class='textComp'>{{item.title}}</view>
+</view>
+</navigator>
+</block></view>  
+    </swiper-item>  
+    <swiper-item>  
+      <view><block wx:for='{{companyData}}' wx:key='key'>
+<navigator class='listWrap'>
+<image class='listThumb' src='{{item.companyImg}}'></image>
+<view class='listInfo'>
+<image src='http://img.weiye.me/zcimgdir/album/file_5936713fa9884.png' class='imgSt'></image>
+<text class='textCom'>{{item.name}}</text>
+<view class='textComp'>{{item.title}}</view>
+</view>
+</navigator>
+</block></view>  
+    </swiper-item>  
+     <swiper-item>  
+      <view><block wx:for='{{companyData}}' wx:key='key'>
+<navigator class='listWrap'>
+<image class='listThumb' src='{{item.companyImg}}'></image>
+<view class='listInfo'>
+<image src='http://img.weiye.me/zcimgdir/album/file_5936713fa9884.png' class='imgSt'></image>
+<text class='textCom'>{{item.name}}</text>
+<view class='textComp'>{{item.title}}</view>
+</view>
+</navigator>
+</block></view>  
+    </swiper-item>  
+</swiper>  
+  </view> 
+<view hidden="{{currentTabs!==2}}">
+ <focusPictures :focuslist.sync="imgUrls" ></focusPictures>
+<view class='textHome'>
+  家乡政策
+</view>
+<view class='homeNews'>
+<view class='homeTitle'><view class='homeTitlea'> 
+  <image src='http://img.weiye.me/zcimgdir/album/file_5948c6835947e.png' class='homeImg'></image>
+  <view class='textTitilea'>教育</view>
+  </view> 
+<view class='homeTitlea'><image src='http://img.weiye.me/zcimgdir/album/file_5948c6835f8be.png' class='homeImg'></image><view class='textTitileb'>最热</view> </view>
+ <view class='homeTitlea'> <image src='http://img.weiye.me/zcimgdir/album/file_5948c68367554.png' class='homeImg'></image><view class='textTitileb'>商业</view></view>  </view> 
+  </view> 
+  <newsList :list.sync="newsList" ></newsList>
+  </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+import NewsList from '../components/newsList'
+import FocusPictures from '../components/focusPictures'
+export default class connection extends wepy.page {
+  config = {
+    navigationBarTitleText: '人脉'
+  };
+  components = {
+    focusPictures: FocusPictures,
+    newsList: NewsList
+  };
+  data = {
+    winWidth: 0,
+    winHeight: 0,
+    navbar: ['人脉', '企业', '家乡'],
+    currentTab: 0,
+    currentTabs: 0,
+    indicatorDots: true,
+    autoplay: true,
+    interval: 5000,
+    duration: 1000,
+    newsList: [],
+    circular: true,
+    imgUrls: [
+      'http://img.weiye.me/zcimgdir/album/file_5948c4e593c26.jpg',
+      'http://img.weiye.me/zcimgdir/album/file_5948c4e25113a.jpg'
+    ],
+    companyData: [],
+    companyData2: [
+      {
+        companyImg: 'http://img.weiye.me/zcimgdir/album/file_5936735a3768d.png',
+        title: '基于消费环境的移动电源租赁平台',
+        name: '礼舍科技',
+        type: '1'
+      },
+      {
+        companyImg: 'http://img.weiye.me/zcimgdir/album/file_5936735a42b82.png',
+        title: '基于消费环境的移动电源租赁平台',
+        name: '77科技',
+        type: '1'
+      },
+      {
+        companyImg: 'http://img.weiye.me/zcimgdir/album/file_593673599ec72.png',
+        title: '基于消费环境的移动电源W租赁平台',
+        name: '海豚科技',
+        type: '2'
+      },
+      {
+        companyImg: 'http://img.weiye.me/zcimgdir/album/file_593673599440a.png',
+        title: '基于消费环境的移动电源租赁平台',
+        name: 'SOBUG',
+        type: '2'
+      },
+      {
+        companyImg: 'http://img.weiye.me/zcimgdir/album/file_593673599c902.png',
+        title: '基于消费环境的移动电源租赁平台',
+        name: 'EMIE',
+        type: '3'
+      },
+      {
+        companyImg: 'http://img.weiye.me/zcimgdir/album/file_59367359cd43c.png',
+        title: '基于消费环境的移动电源租赁平台',
+        name: '秦丝科技',
+        type: '3'
+      }
+    ]
+  };
+  onLoad() {
+    this.companyData = this.companyData2
+  }
+  methods = {
+    navbarTap: function(e) {
+      this.currentTabs = e.currentTarget.dataset.idx
+    },
+    bindChange(e) {
+      this.currentTab = e.detail.current
+    },
+    swichNav(e) {
+      console.log('swichNav')
+      if (this.data.currentTab === e.target.dataset.current) {
+        return false
+      } else {
+        this.currentTab = e.target.dataset.current
+        if (parseInt(this.currentTab) === 0) {
+          this.companyData = this.companyData2
+        } else {
+          this.companyData = this.companyData2.filter(item => {
+            return item.type === e.target.dataset.current
+          })
+        }
+      }
+    }
+  }
+}
+</script>
+<style lang="less">
+.content {
+  overflow: hidden;
+}
+.exmaple {
+  width: 100%;
+  height: 1000rpx;
+  border: solid 2rpx black;
+}
+.textCom {
+  padding-left: 10rpx;
+  font-size: 28rpx;
+}
+.textComp {
+  font-size: 28rpx;
+  color: rgb(139, 134, 134);
+}
+.textHome {
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 50rpx;
+  width: 100%;
+  height: 50rpx;
+  color: rgb(110, 105, 105);
+  background-color: rgb(177, 169, 169);
+}
+.imgSt {
+  width: 45rpx;
+  height: 25rpx;
+}
+.listWrap {
+  width: 705rpx;
+  padding: 0 25rpx;
+  padding: 30rpx 25rpx;
+}
+.listThumb {
+  width: 200rpx;
+  height: 160rpx;
+  display: block;
+  float: left;
+}
+.listInfo {
+  height: 160rpx;
+  width: 60%;
+  display: inline-block;
+  padding-left: 10rpx;
+  position: relative;
+}
+.slide-image {
+  width: 100%;
+}
+.navbar {
+  margin: auto;
+  width: 400rpx;
+  color: rgb(155, 153, 145);
+  font-size: 30rpx;
+  flex: none;
+  display: flex;
+  background: #fff;
+}
+.navbar .item {
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
+}
+.navbar .item.active {
+  color: rgb(32, 32, 29);
+}
+.navbar .item.active:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 40rpx;
+  margin: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background: rgb(32, 32, 29);
+}
+
+.textA {
+  padding-top: 100rpx;
+  padding-left: 100rpx;
+  position: absolute;
+  z-index: 999;
+  color: #fff;
+  .textAa {
+    font-size: 55rpx;
+    font-weight: 600;
+    z-index: 999;
+    color: #fff;
+  }
+  .textAb {
+    font-size: 35rpx;
+    z-index: 999;
+    color: #fff;
+  }
+}
+.imgA {
+  width: 100%;
+  height: 400rpx;
+  position: relative;
+  z-index: 1;
+}
+.swiper-tab {
+  width: 100%;
+  border-bottom: 2rpx solid #777777;
+  text-align: center;
+  line-height: 80rpx;
+}
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 25%;
+  color: rgb(112, 112, 109);
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+}
+.on {
+  color: #da7c0c;
+  border-bottom: 5rpx solid #da7c0c;
+}
+.homeNews {
+  width: 96%;
+  margin: auto;
+  overflow: hidden;
+}
+.homeTitle {
+  display: flex;
+  justify-content: space-around;
+  .homeTitlea {
+    padding-top: 40rpx;
+    width: 30%;
+    height: 160rpx;
+    font-size: 28rpx;
+  }
+  .homeImg {
+    width: 30%;
+    height: 160rpx;
+    position: absolute;
+  }
+  .textTitilea {
+    width: 60rpx;
+    height: 60rpx;
+    color: grey;
+    margin: auto;
+    line-height: 160rpx;
+    z-index: 999;
+    position: relative;
+  }
+  .textTitileb {
+    width: 60rpx;
+    height: 60rpx;
+    color: white;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    line-height: 160rpx;
+    z-index: 999;
+  }
+}
+</style>
