@@ -20,6 +20,7 @@ wepy less
 3、微信开发者工具-->项目-->关闭上传代码时样式自动补全。  <font color=red>重要：某些情况下漏掉此项也会运行报错。</font> 
 
 4、微信开发者工具-->项目-->关闭代码压缩上传。  <font color=red>重要：开启后，会导致真机computed, props.sync 等等属性失效。</font>   
+### 部分页面截图  
 
 <img width="250" height="350" src="https://github.com/Jayorzzzzzzzzzzzz/tradeClub/blob/master/webwxgetmsgimg%20(2).jpg"/>
 <img width="250" height="350" src="https://github.com/Jayorzzzzzzzzzzzz/tradeClub/blob/master/webwxgetmsgimg%20(1).jpg"/>
