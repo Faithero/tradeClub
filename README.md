@@ -1,5 +1,4 @@
-### 技术栈 
-wepy less
+
 ### 安装（更新） wepy 命令行工具。
 	npm install wepy-cli -g
 
